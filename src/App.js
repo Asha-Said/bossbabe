@@ -3,13 +3,16 @@ import "./App.css";
 import About from "./About";
 import FormInput from "./components/FormInput";
 import NavBar from "./components/NavBar";
- import {Route, Routes } from "react-router-dom"
+ import {Form, Route, Routes } from "react-router-dom"
  import Header from "./components/Header";
  import Contact from "./components/Contact";
 
 
 const App = () => {
   const [values, setValues] = useState({
+  
+
+
     username: "",
     email: "",
     birthday: "",
@@ -74,7 +77,25 @@ const App = () => {
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  };  
+  // const handleData=(item)=>{
+  //   const postHeaders={
+  //     method:'POST',
+  //     headers:{'Content-type':'application/json'},
+  //     body:JSON.stringify(item)
+  
+  //   }
+  //   fetch('https://asha-said.github.io/bossbabe/',postHeaders)
+  //   .then(res=>res.json())
+  //   .then(data=>setUsers([...users,data]))
+
+  // }
+  // useEffect(()=>{
+  //   fetch('https://asha-said.github.io/bossbabe/')
+  //   .then((res)=> res.json())
+  //   .then((data) =>setUsers(data))
+  // },[])
+
 
   return (
     <div className="app">
@@ -90,25 +111,18 @@ const App = () => {
         ))}
         <button>Submit</button>
       </form>
+      
       <NavBar/>
       <Header/>
       <Routes>
-        
+        <Route exact path ="/contact" element={<Contact/>} />
         <Route exact path ="/about" element={<About/>} /> 
-        <Route exact path ="/contact" elementent={<Contact/>} />
-        <Route exact path ="/home" element={<FormInput/>} />
+        <Route exact path ="/home" element={<Form/>} /> 
+      
        </Routes>
     </div>
   );
-  // return(
-  //     <div className="App">
-  //       <NavBar/>
-  //       <Route exact path ="/" component={Home} />
-  //       <Route exact path ="/" component={About} /> 
-  //       <Route exact path ="/" component={FormInput} /> 
-        
-  //     </div>
-  // );
+  
 }
 
 export default App;

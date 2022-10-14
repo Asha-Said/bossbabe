@@ -3,9 +3,9 @@ import {Link} from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-black">
   <div class="container-fluid">
-    <Link class="navbar-brand" to="/">Bossbabe</Link>
+    <Link className="navbar-brand" to="/"></Link>
     <button
       class="navbar-toggler"
       type="button"
@@ -17,16 +17,16 @@ const NavBar = () => {
     >
       <i class="fas fa-bars"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <Link class="nav-link active" aria-current="page" to="/">Home</Link>
+    <div className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/about">About</Link>
+        <li className="nav-item">
+          <Link className="nav-link" to="/about">About</Link>
         </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/contact">Contact</Link>
+        <li className="nav-item">
+          <Link className="nav-link" to="/contact">Contact</Link>
         </li>
       </ul>
     </div>
